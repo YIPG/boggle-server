@@ -25,6 +25,6 @@ app.post("/", (req, res) => {
   res.send(ok ? "true" : "false")
 })
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log("localhost:8080")
 })
