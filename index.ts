@@ -2,6 +2,7 @@ import express from "express"
 import bofyParser from "body-parser"
 import fs from "fs"
 import path from "path"
+import cors from "cors"
 import { Trie } from "./trie"
 
 const dictionaryPath = path.join(process.cwd(), "assets/dictionary.json")
@@ -18,6 +19,7 @@ console.log("trie ready!")
 
 const app = express()
 app.use(bofyParser.text())
+app.use(cors())
 
 app.post("/", (req, res) => {
   const word: string = req.body
